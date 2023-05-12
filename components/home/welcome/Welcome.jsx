@@ -19,7 +19,7 @@ const jobTypes = [
   "Contract",
 ];
 
-const Welcome = ({ searchTerm, setSearchterm, handleClick }) => {
+const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   const router = useRouter();
   const [activeJobType, setActiveJobType] = useState("Full time");
 
@@ -35,7 +35,7 @@ const Welcome = ({ searchTerm, setSearchterm, handleClick }) => {
           <TextInput
             style={styles.searchInput}
             value={searchTerm}
-            onChange={(text) => searchTerm(text)}
+            onChangeText={(text) => setSearchTerm(text)}
             placeholder="What are you looking for?"
           />
         </View>
@@ -64,6 +64,7 @@ const Welcome = ({ searchTerm, setSearchterm, handleClick }) => {
           )}
           keyExtractor={(item) => item}
           contentContainerStyle={{ columnGap: SIZES.small }}
+          showsHorizontalScrollIndicator={false}
           horizontal
         />
       </View>
